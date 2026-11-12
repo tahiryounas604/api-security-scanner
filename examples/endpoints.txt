@@ -1,0 +1,12 @@
+# Example endpoint list for the local test fixture.
+# Lines: METHOD /path [public]
+# Start the fixture first: python -m api_security_scanner.fixture --port 8765
+GET /api/public/health public
+GET /api/users
+GET /api/users/me
+GET /api/users/{id}
+GET /api/users/{id}/secure
+GET /api/admin/stats
+GET /api/no-limit public
+GET /api/debug/error
+GET /api/debug/clean-error

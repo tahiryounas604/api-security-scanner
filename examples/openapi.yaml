@@ -1,0 +1,50 @@
+openapi: 3.0.3
+info:
+  title: Test Fixture API
+  version: 0.1.0
+servers:
+  - url: http://127.0.0.1:8765
+paths:
+  /api/public/health:
+    get:
+      security: []
+      responses:
+        "200":
+          description: Health check
+  /api/users:
+    get:
+      responses:
+        "200":
+          description: List users
+  /api/users/me:
+    get:
+      responses:
+        "200":
+          description: Own profile
+  /api/users/{id}:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: One user
+  /api/users/{id}/secure:
+    get:
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: One user (ownership enforced)
+  /api/admin/stats:
+    get:
+      responses:
+        "200":
+          description: Admin stats
